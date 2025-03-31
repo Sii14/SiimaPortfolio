@@ -34,7 +34,8 @@ Let's collaborate and build something extraordinary together!`;
     }, 20); // Adjust typing speed
 
     return () => clearInterval(interval);
-  }, []);
+  }, [fullText]); // Add fullText to the dependency array
+
 
   // **Function to apply highlighting** (Splits text into JSX elements)
   const highlightKeywords = (text: string): React.ReactNode[] => {
