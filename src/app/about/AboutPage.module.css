@@ -1,0 +1,30 @@
+.aboutWrapper {
+    font-size: medium;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.aboutWrapper h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.typingEffect {
+    font-size: medium;
+    color: black;
+    line-height: 1.5;
+    min-height: 120px; /* Prevents layout shift */
+    white-space: pre-wrap;
+}
+
+.highlight {
+    background-color: goldenrod; /*rgb(0, 255, 17) /* Highlight color */
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+  
+  

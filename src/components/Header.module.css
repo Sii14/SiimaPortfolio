@@ -1,0 +1,64 @@
+/* Header.module.css */
+
+/* Hide hamburger by default */
+.hamburgerMenu {
+    display: none; /* This hides the hamburger menu by default */
+    background-color: red; /* Temporary debug style */
+    border: 1px solid black; /* Temporary debug style */
+}
+
+/* For larger screens, show nav normally */
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .hamburgerMenu {
+        display: none; /* Hide hamburger menu on large screens */
+    }
+
+    .navItem {
+        list-style: none;
+    }
+
+    .navLink {
+        color: goldenrod;
+        text-decoration: none;
+    }
+}
+
+/* For smaller screens (max-width: 768px), show hamburger and hide nav */
+@media (max-width: 768px) {
+    .hamburgerMenu {
+        display: block; /* Show hamburger menu on small screens */
+        font-size: 1.5rem; /* Adjust the size of the hamburger icon */
+        padding: 10px; /* Add padding around the icon */
+        cursor: pointer; /* Ensure the button is clickable */
+        color: white; /* Set color for the hamburger icon */
+    }
+
+    /* Hide nav items by default */
+    .nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* When the menu is open, show the navigation items */
+    .navOpen {
+        display: flex; /* Show nav items when the menu is open */
+    }
+
+    .navItem {
+        list-style: none;
+    }
+
+    .navLink {
+        color: goldenrod;
+        text-decoration: none;
+    }
+}

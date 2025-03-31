@@ -5,12 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,8 +14,103 @@
   }
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+
+/* Global styles for the HomePage */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 20px;
+  padding-top: 30%; /* Adjusted for small screens */
+  height: 100vh;
+  background-image: url('/backk.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-title {
+  color: white;
+  font-size: 18px;
+}
+
+.home-subtitle {
+  color: white;
+  font-size: 30px;
+  font-weight: lighter;
+  letter-spacing: 10px;
+  margin: 0;
+}
+
+.home-name {
+  color: transparent; /* Make the text itself transparent */
+ /* color: white;*/
+ -webkit-text-stroke: 0.6px goldenrod; /* Thin white outline */
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: -2%;
+}
+
+.home-role {
+  color: white;
+  font-family: candara;
+  letter-spacing: 4px;
+  margin-top: 0.5%;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 30px;
+  width: 100%;
+  gap: 20px;
+}
+
+.card-style {
+  display: flex; /* this is what is needed to make align-items and justify-content work. bila hii,hazito work*/
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media screen and (min-width: 1024px) {
+  .home-container {
+    padding-top: 20%; /* Reduce excessive padding on large screens */
+    padding-left: 60px;
+  }
+
+  .home-subtitle {
+    font-size: 40px; /* Scale up slightly for readability */
+  }
+
+  .home-name {
+    font-size: 60px; /* Adjust to maintain visibility */
+    -webkit-text-stroke: 1px goldenrod; /* Slightly thicker outline for visibility */
+  }
+
+  .cards-container {
+    gap: 30px; /* Slightly increase spacing for better layout */
+  }
 }
