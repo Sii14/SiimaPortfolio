@@ -1,195 +1,132 @@
-.contactPageWrapper {
-    display: flex;
-    justify-content: center; 
-    align-items: flex-start;
-    padding-top: 5%;
-    width: 100%; /* Ensures it takes the full width */
-    padding-right: 30px;
-    gap: 50px;
-    flex-wrap: wrap; /* Ensure that the content wraps for smaller screens */
-}
-
-/* For smaller screens */
-@media (max-width: 768px) {
-    
-    .contactPageWrapper {
-        flex-direction: column; /* Stack content on top of each other */
-        gap: 20px; /* Reduce gap between left and right content */
-        justify-content: center; /* Center content horizontally */
-        align-items: center; /* Center content vertically */
-    }
-
-    .leftContent {
-        flex: 0 0 100%; /* Make left content full width */
-        padding-top: 75px !important; /* Reduce padding on smaller screens */
-        font-size: 1rem !important; /* Adjust font size */
-        text-align: center; /* Center text inside left content */
-        
-    }
-    
-    .leftContent h1 {
-        font-size: 20px !important;
-        color: blue !important;
-    }
-
-    .contactInfo {
-        margin-top: 15px;
-        font-size: 18px; /* Adjust font size for better readability */
-    }
-
-    .infoItem {
-        gap: 8px; /* Reduce space between icon and text */
-    }
-
-    .bold {
-        font-size: 1.1rem; /* Adjust bold text font size */
-    }
-
-    /* Adjust container size */
-    .container {
-        width: 100%; /* Make container full width on small screens */
-        height: auto; /* Let the height adjust based on content */
-        margin-right: 0; /* Remove right margin */
-        display: flex;
-        justify-content: center; /* Center the content */
-        align-items: center; /* Center the content */
-    }
-
-    /* Reduce font size of the heading inside .contacts */
-    .container .contacts h2 {
-        font-size: 1.2em !important; /* Reduce heading font size */
-    }
-
-    /* Adjust input font size */
-    .container .contacts .inputBox input {
-        font-size: 0.9rem; /* Adjust input font size */
-    }
-
-    /* Scale down rotating elements */
-    .container i {
-        transform: scale(0.2); /* Scale down the rotating elements */
-        width: 390px; /* Reduce the width */
-        height: 500px; /* Reduce the height */
-    }
-
-    /* Optionally, scale down the size of .container */
-    .container {
-        width: 80%; /* Adjust container width to fit smaller screens */
-        height: 350px; /* Adjust height */
-    }
-}
-
-.leftContent {
-    flex: 0 0 35%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    padding-top: 130px;
-    padding-left: 20px;
-    font-size: 1.2rem; /* Default font size for larger screens */
-}
-
-.leftContent h1 {
-    font-size: 32px;
-    color: blue;
-}
-
-.contactInfo {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Adds spacing between each section */
-}
-
-.infoItem {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Adds space between icon and text */
-}
-
-.icon {
-    font-size: 18px;
-    color: blue;
-}
-
-.bold {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
 .container {
-    position: relative;
-    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f3;
+    /* Very light gray background */
+}
+
+.neumorphicCard {
+    width: 1000px;
     height: 500px;
+    background: rgba(255, 255, 255, 0.8);
+    /* Slight transparency for glassmorphism */
+    border-radius: 20px;
+    /* Rounded edges */
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1),
+        -10px -10px 30px rgba(255, 255, 255, 0.7);
+    /* Deep neumorphic shadows */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px; /* Optional: Adds space between the container and the right side */
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    /* Glassmorphism effect */
 }
 
-.container i {
-    position: absolute;
-    inset: 0;
-    border: 2px solid red;
-    transition: 0.5s;
-}
-
-.container i:nth-child(1) {
-    border-radius: 43% 57% 74% 26% / 44% 30% 70% 56%;
-    animation: rotate 6s linear infinite;
-}
-
-.container i:nth-child(2) {
-    border-radius: 50% 30% 60% 40% / 40% 60% 30% 70%;
-    animation: rotate 8s linear infinite reverse;
-}
-
-.container i:nth-child(3) {
-    border-radius: 30% 70% 50% 50% / 60% 40% 70% 30%;
-    animation: rotate 10s linear infinite;
-}
-
-.container:hover i {
-    border: 6px solid var(--clr);
-    filter: drop-shadow(0 0 20px var(--clr));
-}
-
-.container .contacts {
-    position: absolute;
-    width: 300px;
-    height: 300px;
+.leftForm {
+    flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 20px;
-}
-
-.container .contacts h2 {
-    font-size: 2em;
-    color: blue;
-}
-
-.container .contacts .inputBox {
+    justify-content: center;
+    padding: 20px;
+    width: 60%; /* Adjust to take only left portion */
+  }
+  
+  .rightContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top (default) */
+    padding: 20px;
+    padding-left: 30px; /* Add left padding to move the content away from the left edge */
+    width: 30%; /* Right portion width */
+    height: 60%;
+    text-align: left; /* Align text to the left */
+    color: white;
+    background: black; /* Black background */
+    box-shadow: none; /* No neumorphic shadow */
+    border-radius: 0; /* Sharp edges */
     position: relative;
-    width: 100%;
-}
+    margin-top: 90px;
+    z-index: 1;
+  }
+  
+  .rightContent h2 {
+    font-weight: bold;
+    color: white;
+  }
 
-.container .contacts .inputBox input {
-    position: relative;
-    width: 100%;
-    padding: 12px 20px;
-    background: transparent;
-    border: 2px solid green;
-    border-radius: 40px;
-}
+  .rightContent p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+  .rightContent i, .rightContent svg { /* For FontAwesome icons or React Icons */
+    margin-right: 10px; /* Space between the icon and the text */
+    color: goldenrod;
+  }
+  
+  .leftForm h2 {
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .leftForm p {
+    font-size: smaller;
+    font-weight: lighter;
+    padding-bottom: 20px;
+  }
+  .inputField, .textareaField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #f0f0f3;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+                inset -5px -5px 10px rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .textareaField {
+    height: 80px;
+    resize: none;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: goldenrod;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+                -5px -5px 10px rgba(255, 255, 255, 0.7);
+    transition: 0.3s;
+  }
+  
+  .submitButton:hover {
+    background: #d4a017;
+  }
+
+.rightStrip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px; /* Adjust width as needed */
+    height: 100%;
+    background: goldenrod;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 0;
+  }
+  
