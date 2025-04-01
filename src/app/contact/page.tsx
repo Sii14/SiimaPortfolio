@@ -49,7 +49,7 @@ export default function ContactPage() {
       <div className={styles.neumorphicCard}>
         {/* Left form content */}
         <div className={styles.leftForm}>
-          <h2>Contact Us</h2>
+          <h2>Contact Siima</h2>
           <p>Feel free to contact me any time. I will get back to you as soon as I can.</p>
           <form onSubmit={handleSubmit}>
             <input

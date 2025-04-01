@@ -130,3 +130,33 @@
     z-index: 0;
   }
   
+
+/* For screens smaller than 768px (mobile and tablets) */
+@media (max-width: 768px) {
+  .neumorphicCard {
+    flex-direction: column; /* Stack the content */
+    height: auto; /* Let the height adjust according to content */
+  }
+
+  .leftForm, .rightContent {
+    width: 100%; /* Ensure they take up full width */
+    padding: 20px; /* Adjust padding for better spacing */
+  }
+
+  .rightContent {
+    margin-top: 20px; /* Add some space between the form and the right content */
+    text-align: left; /* Align text to the left */
+  }
+
+  .leftForm {
+    margin-bottom: 20px; /* Add some space below the form */
+  }
+
+  .rightStrip {
+    display: block; /* the goldenrod strip on smaller screens */
+    
+    z-index: -1;
+  }
+
+  
+}
