@@ -27,4 +27,28 @@
     border-radius: 4px;
   }
   
+  .skillsSection {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+  }
   
+  .skillsSection h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  } 
+
+  
+.skillsSection svg {
+    margin-top: 1rem; /* Adds space between the heading and icon */
+  }
+
+  .skillsIcons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* Adjusted space between icons */
+    color: blue; /* Apply blue color to the icons */
+  }

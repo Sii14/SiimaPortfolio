@@ -2,6 +2,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./AboutPage.module.css";
 import { motion } from "framer-motion";
+import { FaReact, FaHtml5, FaCss3, FaBootstrap, FaLaravel, FaPhp, FaGithub } from 'react-icons/fa';
+import { SiTypescript, SiMysql } from 'react-icons/si';
+import { DiPostgresql } from 'react-icons/di';
+import { RiTailwindCssFill } from 'react-icons/ri';
 
 export default function AboutPage() {
   const fullText: string = `Transforming Ideas into Powerful Digital Solutions!
@@ -90,6 +94,26 @@ Let's collaborate and build something extraordinary together!`;
       <p className={styles.typingEffect}>
         {isTypingComplete ? highlightKeywords(displayedText) : displayedText}
       </p>
+
+      <section className={styles.skillsSection}>
+        <h2>My Skills</h2>
+        <div className={styles.skillsIcons}>
+          <FaReact size={50} />
+          <SiTypescript size={50} />
+          <FaHtml5 size={50} />
+          <FaCss3 size={50} />
+          <RiTailwindCssFill size={50} />
+          <FaBootstrap size={50} />
+          <FaLaravel size={50} />
+          <FaPhp size={50} />
+          <SiMysql size={50} />
+          <DiPostgresql size={50} />
+          <FaGithub size={50} />
+        </div>
+      </section>
+
+
+
     </div>
   );
 }
